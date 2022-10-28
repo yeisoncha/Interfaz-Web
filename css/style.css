@@ -35,7 +35,9 @@ section{
     padding-top: 7.5rem;
     padding-bottom: 2rem;
 }
-.btn{
+
+/*Boton cambiar habitacion*/
+/*.btn{
     display: inline-block;
     margin-top: 1rem;
     padding: .8rem 3rem;
@@ -51,6 +53,82 @@ section{
 .btn:hover{
     transform: scale(1.1);
 }
+
+*/
+#content{
+    margin: auto;
+    width: 500px;
+    font-family:"Open sans";
+}
+ul, ol {
+    list-style: none;
+}
+.navegacion li a {
+    background-color: #000;
+    color: #fff;
+    text-decoration:none;
+    padding: 10px 15px;
+    display: block;
+}
+.navegacion li a {
+    background-color:#434343 ;
+}
+.navegacion > li{
+    float: left;
+}
+.navegacion li ul {
+    display:none;
+    position: absolute;
+    min-width: 140px;
+}
+.navegacion li:hover > ul{
+    display: block;
+}
+.navegacion li ul li{
+    position: relative;
+}
+.navegacion li ul li ul{
+    right: -140px;
+    top:0px ;
+}
+/*sub menu boton cambiar habitacion
+
+.menu > li{
+    position: relative;
+    display: inline-block;
+}
+
+.menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: #353535;
+    font-family: 'Open sans';
+    text-decoration: none;
+}
+.menu li:hover {
+   color: #CE7D35;
+   transition: all .3s;
+}
+.submenu{
+    position: absolute;
+    background-color: #333333;
+    width: 120px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+.submenu li a{
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family:'Open sans';
+    text-decoration: none;
+}
+menu li a:hover .submenu{
+    visibility: visible ;
+    opacity: 1;
+}*/
+
 header{
     position: fixed;
     top: 0;
