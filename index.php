@@ -27,18 +27,16 @@
             <h3>ILUMINA<span> TU HOGAR</span></h3>
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
            <ul class="navegacion">
-                    <li><a href="#">Modo de ilimunacion</a>
+                    <li><a href="#">Modos de ilimunacion</a>
                     <ul>     
                     <li><a href="#">Modo remoto</a>
-                          <?php
-                          añ
-                           ?>       
+                             
                     
                         <li><a href="#">Modo Automatico</a>
                         <li><a href="#">modo Sensado</a>
                     </ul>
                     </li>
-                    <li><a href="#">Encender led</a>
+                    <li><a href="#">Encender bombilla</a>
                        <ul>
                            <li><a href="#">Habitacion 1</a>
                                 <ul>
