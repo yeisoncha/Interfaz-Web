@@ -60,21 +60,63 @@ section{
     width: 500px;
     font-family:"Open sans";
 }
+
 ul, ol {
-    list-style: none;
+    list-style-type: none;
 }
-.navegacion li a {
+
+/*.navegacion li a {
     background-color: #000;
     color: #fff;
     text-decoration:none;
     padding: 10px 15px;
     display: block;
-}
+}*/
+
+
 .navegacion li a {
+    color: #318aac !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border: 0.5px solid;
+    border-color: #318aac;
+    transition: all 1s ease;
+    position: relative;
+    display: block;
+  }
+  .navegacion li a1 {
+    color: #318aac !important;
+    font-size: 20px;
+    font-weight: 5s00;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border: 0.5px solid;
+    border-color: #318aac;
+    transition: all 1s ease;
+    position: relative;
+    display: block;
+    margin: auto;
+  }
+.navegacion:hover li a1 {
+    background:#b9b7b7;
+    color: rgb(255, 255, 255);
+  }
+
+  .navegacion li a {
     background-color:#434343 ;
 }
+
 .navegacion > li{
     float: left;
+}
+.navegacion ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    background-color: #434343;
 }
 .navegacion li ul {
     display:none;
@@ -83,6 +125,8 @@ ul, ol {
 }
 .navegacion li:hover > ul{
     display: block;
+    
+
 }
 .navegacion li ul li{
     position: relative;
@@ -91,44 +135,9 @@ ul, ol {
     right: -140px;
     top:0px ;
 }
-/*sub menu boton cambiar habitacion
 
-.menu > li{
-    position: relative;
-    display: inline-block;
-}
 
-.menu > li > a{
-    display: block;
-    padding: 15px 20px;
-    color: #353535;
-    font-family: 'Open sans';
-    text-decoration: none;
-}
-.menu li:hover {
-   color: #CE7D35;
-   transition: all .3s;
-}
-.submenu{
-    position: absolute;
-    background-color: #333333;
-    width: 120px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1.5s;
-}
-.submenu li a{
-    display: block;
-    padding: 15px;
-    color: #fff;
-    font-family:'Open sans';
-    text-decoration: none;
-}
-menu li a:hover .submenu{
-    visibility: visible ;
-    opacity: 1;
-}*/
-
+  
 header{
     position: fixed;
     top: 0;
