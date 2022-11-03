@@ -1,15 +1,24 @@
-var mysql = require('mysql');
-var conexion= mysql.createConnection({
+var connection = require('mysql');
+var conexion= connection.createConnection({
     host : 'localhost',
-    database : 'empleados',
-    user : 'EquipoDinamita',
-    password : 'PASS',
+    user : 'u628361878_lab3',
+    password : 'Domotica#3245',
+    database : 'u628361878_laboratorio3	'
+
 });
 
-conexion.connect(function(err) {
-    if (err) {
-        console.error('Error de conexion: ' + err.stack);
-        return;
-    }
-    console.log('Conectado con el identificador ' + conexion.threadId);
-});
+const conectar  =() =>{
+    conexion.connect(err => {
+        if(err) throw  err 
+        console.log("Conectado a la DB");
+    })
+
+}
+
+
+const consultarEstado(estado)
+
+module.exports ={
+    conectar
+
+}
