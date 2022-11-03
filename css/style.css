@@ -36,6 +36,21 @@ section{
     padding-bottom: 2rem;
 }
 
+.Iluminacion li a {
+    color: #318aac !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border: 0.5px solid;
+    border-color: #318aac;
+    transition: all 1s ease;
+    position: relative;
+    display: block;
+  }
+  li, a {
+    list-style-type: none;
+}
 /*Boton cambiar habitacion*/
 /*.btn{
     display: inline-block;
@@ -80,7 +95,6 @@ ul, ol {
     font-weight: 500;
     padding: 0.5em 1.2em;
     background: rgba(0,0,0,0);
-    border: 0.5px solid;
     border-color: #318aac;
     transition: all 1s ease;
     position: relative;
