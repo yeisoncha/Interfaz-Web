@@ -1,4 +1,6 @@
-var mysql = require('mysql');
+const express = require('express');
+const mysql = require('mysql');
+
 var conexion= mysql.createConnection({
     host : 'localhost',
     user : 'root',
@@ -15,7 +17,11 @@ conexion.connect(function(error){
         console.log("Conexion exitosa")
     }
 
-})
+});
+
+app.listen
+
+//conexion.query('SELECT * from ')
 
 // conexion.end();
 
