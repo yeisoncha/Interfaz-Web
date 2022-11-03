@@ -19,11 +19,17 @@ conexion.connect(function(error){
 
 });
 
-app.listen
 
-//conexion.query('SELECT * from ')
+conexion.query('INSERT INTO modos (ID_TARJ,hab1,hab2,hab3,modo) VALUES (1,1,2,1,1) ', function(error, results, fileds){
+    if(error)
+    throw error;
+    results.forEach(result => {
+        console.log(result);
+    });
+})
 
-// conexion.end();
+
+conexion.end();
 
 // const conectar  =() =>{
 //     conexion.connect(err => {
