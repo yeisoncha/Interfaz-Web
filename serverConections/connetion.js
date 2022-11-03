@@ -16,7 +16,15 @@ const conectar  =() =>{
 }
 
 
-const consultarEstado(estado)
+const consultarEstado=(id,idtarget,hab1,hab2,hab3,modo) =>{
+   conectar();
+    let  query = "INSERT INTO estados  VALUES(NULL,"+idtarget+","+hab1+","+hab2+","+hab3+",)"
+    conexion.query(query,function(err,result,filed) {
+        if (err) throw err
+        console.log(result);
+
+    })
+}
 
 module.exports ={
     conectar
