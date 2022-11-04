@@ -1,3 +1,5 @@
+
+<?php
 :root{
     --verde: #0c443a;
     --azul: #3381FF; 
@@ -36,6 +38,21 @@ section{
     padding-bottom: 2rem;
 }
 
+.Iluminacion li a {
+    color: #318aac !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border: 0.5px solid;
+    border-color: #318aac;
+    transition: all 1s ease;
+    position: relative;
+    display: block;
+  }
+  li, a {
+    list-style-type: none;
+}
 /*Boton cambiar habitacion*/
 /*.btn{
     display: inline-block;
@@ -80,7 +97,6 @@ ul, ol {
     font-weight: 500;
     padding: 0.5em 1.2em;
     background: rgba(0,0,0,0);
-    border: 0.5px solid;
     border-color: #318aac;
     transition: all 1s ease;
     position: relative;
@@ -136,6 +152,22 @@ ul, ol {
     top:0px ;
 }
 
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    background: var(--azul);
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transition: all .3s linear;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+    color: green;
+}
 
   
 header{
@@ -250,3 +282,4 @@ header label{
         font-size: 49%;
     }
 }
+?>
