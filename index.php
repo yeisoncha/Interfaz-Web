@@ -92,54 +92,94 @@
     $mysqli = new mysqli($host, $user, $pw, $db);
     if(isset($_POST['ON1']))			// If press ON
     {	
-              
-        $sql = "UPDATE estados set hab1='1' where ID_TARJ='1'";	// Update present status to database
+        $sql2 = "SELECT modo from estados where ID_TARJ=1";
+        $result = $mysqli->query($sql2);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        $modo = $row[0]; 
+        if($modo == 0){
+            $sql = "UPDATE estados set hab1='1' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
-        } 
+            if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+            //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+            } 
+        }      
+        
     }
     if(isset($_POST['OFF1']))			// If press ON
     {	
-              
-        $sql = "UPDATE estados set hab1='0' where ID_TARJ='1'";	// Update present status to database
+        $sql2 = "SELECT modo from estados where ID_TARJ=1";
+        $result = $mysqli->query($sql2);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        $modo = $row[0];
+        if($modo == 0){
+            $sql = "UPDATE estados set hab1='0' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
-        } 
+            if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+            //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+            } 
+        }
+        
     }
 
     if(isset($_POST['ON2']))			// If press ON
     {	
-        $sql = "UPDATE estados set hab2='1' where ID_TARJ='1'";	// Update present status to database
+        $sql2 = "SELECT modo from estados where ID_TARJ=1";
+        $result = $mysqli->query($sql2);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        $modo = $row[0];
+        if($modo == 0){
+            $sql = "UPDATE estados set hab2='1' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
-        } 
+            if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+            //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+            }
+        }
+         
     }
     if(isset($_POST['OFF2']))			// If press ON
     {	
-        $sql = "UPDATE estados set hab2='0' where ID_TARJ='1'";	// Update present status to database
+        $sql2 = "SELECT modo from estados where ID_TARJ=1";
+        $result = $mysqli->query($sql2);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        $modo = $row[0];
+        if($modo == 0){
+            $sql = "UPDATE estados set hab2='0' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
-        } 
+            if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+            //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+            } 
+        }
+        
     }
     if(isset($_POST['ON3']))			// If press ON
     {	
-        $sql = "UPDATE estados set hab3='1' where ID_TARJ='1'";	// Update present status to database
+        $sql2 = "SELECT modo from estados where ID_TARJ=1";
+        $result = $mysqli->query($sql2);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        $modo = $row[0];
+        if($modo == 0){
+            $sql = "UPDATE estados set hab3='1' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
-        } 
+            if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+            //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+            } 
+        }
+        
     }
     if(isset($_POST['OFF3']))			// If press ON
     {	
-        $sql = "UPDATE estados set hab3='0' where ID_TARJ='1'";	// Update present status to database
+        $sql2 = "SELECT modo from estados where ID_TARJ=1";
+        $result = $mysqli->query($sql2);
+        $row = $result->fetch_array(MYSQLI_NUM);
+        $modo = $row[0];
+        if($modo == 0){
+            $sql = "UPDATE estados set hab3='0' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
-        } 
+            if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+            //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+            } 
+        }
+        
     }
     if(isset($_POST['MODOREMOTO']))			// If press ON
     {	
