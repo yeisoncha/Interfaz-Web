@@ -6,13 +6,16 @@
     <link rel="stylesheet"  type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    
+    <script>
+        const modo_header = document.getElementById("modo_header");
+        modo_header.innerText = " " + $result;
+    </script>
 </head>
 <header>
     <a href="#" class="logo">
         <span>Sistema domótico</span></a>
         <div class="Iluminacion">
-            <li><a href="#"> Modo de iluminacion actual: automatico</a>
+            <li><a href="#"> Modo de iluminacion actual : <p id="modo_header"></p></a>
                 
         </div>
           <input type="checkbox" id="menu-bar">
@@ -41,7 +44,7 @@
                     </ul>
                     </li>
                     <li><a href="#">Encender bombilla</a>
-                       <ul>
+                    <ul>
                            <li><a href="#">Habitación 1</a>
                                 <ul>
                                 <button class="btn" type="submit" name = "ON1" >ON</button>
