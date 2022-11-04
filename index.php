@@ -15,7 +15,7 @@
     <a href="#" class="logo">
         <span>Sistema domótico</span></a>
         <div class="Iluminacion">
-            <li><a href="#"> Modo de iluminacion actual : <p id="modo_header"></p></a>
+            <li><a href="#"> Modo de iluminacion actual: <p id="modo_header"></p></a>
                 
         </div>
           <input type="checkbox" id="menu-bar">
