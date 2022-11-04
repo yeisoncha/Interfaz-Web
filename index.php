@@ -6,10 +6,7 @@
     <link rel="stylesheet"  type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <script>
-        const modo_header = document.getElementById("modo_header");
-        modo_header.innerText = " " + $result;
-    </script>
+
 </head>
 <header>
     <a href="#" class="logo">
@@ -238,3 +235,8 @@
         
     }
 ?>
+
+<script>
+        const modo_header = document.getElementById("modo_header");
+        modo_header.innerText = " " + "<?php $result ?>";
+    </script>
