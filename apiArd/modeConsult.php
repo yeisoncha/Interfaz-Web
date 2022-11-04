@@ -3,7 +3,7 @@
 
     $ID_TARJ = $_GET["ID_TARJ"];// 
     $mysqli = new mysqli($host, $user, $pw, $db); // Aqu� se hace la conexi�n a la base de datos.
-    $sql = "SELECT modo from estados where ID_TARJ=1";
+    $sql = "SELECT modo from estados where ID_TARJ='$ID_TARJ'";
     $result = $mysqli->query($sql);
     $row = $result->fetch_array(MYSQLI_NUM);
     $modo = $row[0];
