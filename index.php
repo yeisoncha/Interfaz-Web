@@ -26,6 +26,7 @@
        
 </header>
 <body>
+<form action="" method="POST">
     <section class="inicio" id="inicio">
         <div class="content">
             <h3>ILUMINA<span> TU HOGAR</span></h3>
@@ -44,20 +45,20 @@
                        <ul>
                            <li><a href="#">Habitación 1</a>
                                 <ul>
-                                    <li><a1 href="#" class="btn" name="ON">Encender</a1></li>
-                                    <li><a1 href="#" class="btn" name="OFF">Apagar</a1></li>
+                                <button class="btn" type="submit" name = "ON1" >ON</button>
+                                <button class="btn"  type="submit" name = "OFF1" >OFF</button>
                                 </ul>
                             </li>
                             <li><a href="#">Habitación 2</a>
                                <ul>
-                                    <li><a1 href="#" class="btn onhab2">Encender</a1></li>
-                                    <li><a1 href="#" class="btn onhab2">Apagar</a1></li>
+                               <button class="btn" type="submit" name = "ON2" >ON</button>
+                                <button class="btn"  type="submit" name = "OFF2" >OFF</button>
                                 </ul>
                             </li>
                            <li><a href="#">Habitación 3</a>
                                 <ul>
-                                    <li><a1 href="#" class="btn onhab3">Encender</a1></li>
-                                    <li><a1 href="#" class="btn onhab3">Apagar</a1></li>
+                                <button class="btn" type="submit" name = "ON3" >ON</button>
+                                <button class="btn"  type="submit" name = "OFF3" >OFF</button>
                             </ul>
                         </li>
                        </ul>
@@ -87,16 +88,62 @@
 </html>
 
 <?php
-    require("conexion.php");
+    require ("conexion.php");
 			
     $mysqli = new mysqli($host, $user, $pw, $db);
-    if(isset($_POST['ON']))			// If press ON
+    if(isset($_POST['ON1']))			// If press ON
     {	
         echo("hoooola");       
-        $sql = "UPDATE estados set hab1=1 where id=1";	// Update present status to database
+        $sql = "UPDATE estados set hab1='1' where ID_TARJ='1'";	// Update present status to database
     //             // If don't put this If , we can't change the value in database
-    if ($conn->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
-    //                 //$_GET[] = 1;						// why i have to put this line but it still run when it's commented
-    } 
+        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+        } 
+    }
+    if(isset($_POST['OFF1']))			// If press ON
+    {	
+        echo("hoooola");       
+        $sql = "UPDATE estados set hab1='0' where ID_TARJ='1'";	// Update present status to database
+    //             // If don't put this If , we can't change the value in database
+        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+        } 
+    }
+
+    if(isset($_POST['ON2']))			// If press ON
+    {	
+        echo("hoooola");       
+        $sql = "UPDATE estados set hab2='1' where ID_TARJ='1'";	// Update present status to database
+    //             // If don't put this If , we can't change the value in database
+        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+        } 
+    }
+    if(isset($_POST['OFF2']))			// If press ON
+    {	
+        echo("hoooola");       
+        $sql = "UPDATE estados set hab2='0' where ID_TARJ='1'";	// Update present status to database
+    //             // If don't put this If , we can't change the value in database
+        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+        } 
+    }
+    if(isset($_POST['ON3']))			// If press ON
+    {	
+        echo("hoooola");       
+        $sql = "UPDATE estados set hab3='1' where ID_TARJ='1'";	// Update present status to database
+    //             // If don't put this If , we can't change the value in database
+        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+        } 
+    }
+    if(isset($_POST['OFF3']))			// If press ON
+    {	
+        echo("hoooola");       
+        $sql = "UPDATE estados set hab3='0' where ID_TARJ='1'";	// Update present status to database
+    //             // If don't put this If , we can't change the value in database
+        if ($mysqli->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+        //                 $_GET[] = 1;						// why i have to put this line but it still run when it's commented
+        } 
     }
 ?>
