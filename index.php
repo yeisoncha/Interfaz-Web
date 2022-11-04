@@ -1,3 +1,6 @@
+<?php
+    require ("conexion.php");
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,13 +9,31 @@
     <link rel="stylesheet"  type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
+    
 </head>
 <header>
-    <a href="#" class="logo">
+    <a class="logo">
         <span>Sistema domótico</span></a>
         <div class="Iluminacion">
-            <li><a href="#"> Modo de iluminacion actual: <p id="modo_header"></p></a>
+            <li><a href="#"> Modo de iluminacion actual: <p><?php
+                $mysqli = new mysqli($host, $user, $pw, $db);
+                $sql = "SELECT modo from estados where ID_TARJ=1";
+                $result = $mysqli->query($sql);
+                $row = $result->fetch_array(MYSQLI_NUM);
+                $modo = $row[0];
+                switch($modo){
+                    case 0:
+                        $etiqueta = "REMOTO";
+                    break;
+                    case 1:
+                        $etiqueta = "AUTOMATICO";
+                    break;
+                    case 2:
+                        $etiqueta = "SENSADO";
+                    break;
+                }
+                echo($etiqueta);
+            ?></p></a>
                 
         </div>
           <input type="checkbox" id="menu-bar">
@@ -66,9 +87,54 @@
                     
                     <li><a href="#">Estado de iluminación</a>
                     <ul>     
-                        <li><a href="#" class="btn" type="submit" name = "ON3" >Habitación 1</button>
-                        <li><a href="#" class="btn">Habitación 2:</a>
-                        <li><a href="#" class="btn">Habitación 3:</a>
+                        <li><a href="#"> Habitacion 1 <p><?php
+                            $mysqli = new mysqli($host, $user, $pw, $db);
+                            $sql = "SELECT hab1 from estados where ID_TARJ=1";
+                            $result = $mysqli->query($sql);
+                            $row = $result->fetch_array(MYSQLI_NUM);
+                            $modo = $row[0];
+                            switch($modo){
+                                case 0:
+                                    $etiqueta = "apagado";
+                                break;
+                                case 1:
+                                    $etiqueta = "encendido";
+                                break;
+                            }
+                            echo($etiqueta);
+                        ?></p></a>
+                        <li><a href="#"> Habitacion 2 <p><?php
+                            $mysqli = new mysqli($host, $user, $pw, $db);
+                            $sql = "SELECT hab2 from estados where ID_TARJ=1";
+                            $result = $mysqli->query($sql);
+                            $row = $result->fetch_array(MYSQLI_NUM);
+                            $modo = $row[0];
+                            switch($modo){
+                                case 0:
+                                    $etiqueta = "apagado";
+                                break;
+                                case 1:
+                                    $etiqueta = "encendido";
+                                break;
+                            }
+                            echo($etiqueta);
+                        ?></p></a>
+                        <li><a href="#"> Habitacion 3 <p><?php
+                            $mysqli = new mysqli($host, $user, $pw, $db);
+                            $sql = "SELECT hab3 from estados where ID_TARJ=1";
+                            $result = $mysqli->query($sql);
+                            $row = $result->fetch_array(MYSQLI_NUM);
+                            $modo = $row[0];
+                            switch($modo){
+                                case 0:
+                                    $etiqueta = "apagado";
+                                break;
+                                case 1:
+                                    $etiqueta = "encendido";
+                                break;
+                            }
+                            echo($etiqueta);
+                        ?></p></a>
                     </ul>
                     </li>
 
@@ -87,7 +153,7 @@
 </html>
 
 <?php
-    require ("conexion.php");
+    
 			
     $mysqli = new mysqli($host, $user, $pw, $db);
     if(isset($_POST['ON1']))			// If press ON
@@ -235,10 +301,3 @@
         
     }
 ?>
-
-<script>
-        const modo_header = document.getElementById("modo_header");
-        modo_header.innerText = "Hola " + "";
-</script>
-
- <?php $result ?>
