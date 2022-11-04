@@ -8,9 +8,9 @@
 #include <ArduinoJson.h>
 
 
-const char* ssid     = "HP_DESKTOP";      // SSID
-const char* password = "Jefferson_Steven23#";      // Password
-const char* host = "192.168.137.1";  // Dirección IP local o remota, del Servidor Web
+const char* ssid     = "GET UP";      // SSID
+const char* password = "getup2019";      // Password
+const char* host = "192.168.100.78";  // Dirección IP local o remota, del Servidor Web
 const int   port = 80;            // Puerto, HTTP es 80 por defecto, cambiar si es necesario.
 const int   watchdog = 2000;        // Frecuencia del Watchdog
 unsigned long previousMillis = millis(); 

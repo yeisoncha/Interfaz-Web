@@ -5,7 +5,7 @@ $hab1 = $_GET["hab1"];
 $hab1 = $_GET["hab2"];
 $hab1 = $_GET["hab3"];
 $modo = $_GET["modo"]; 
-$ID_TARJ = $_GET["ID_TARJ"];// el dato de humedad que se recibe aqu� con GET denominado humedad, es enviado como 
+$ID_TARJ = $_GET["ID_TARJ"];// 
 //parametro en la solicitud que realiza la tarjeta microcontrolada
 
 
