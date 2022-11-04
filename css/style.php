@@ -1,3 +1,5 @@
+
+<?php
 :root{
     --verde: #0c443a;
     --azul: #3381FF; 
@@ -280,3 +282,4 @@ header label{
         font-size: 49%;
     }
 }
+?>

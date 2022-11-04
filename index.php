@@ -1,13 +1,11 @@
-<?php
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Domotic_ System</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link erl="stylesheet"  type="text/css" href="css/style.php">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
 </head>
 <header>
     <a href="#" class="logo">
@@ -45,20 +43,20 @@
                        <ul>
                            <li><a href="#">Habitación 1</a>
                                 <ul>
-                                    <li><a1 href="#" class="btn">Encender</a1></li>
-                                    <li><a1 href="#" class="btn">Apagar</a1></li>
+                                    <li><a1 href="#" class="btn" name="ON">Encender</a1></li>
+                                    <li><a1 href="#" class="btn" name="OFF">Apagar</a1></li>
                                 </ul>
                             </li>
                             <li><a href="#">Habitación 2</a>
                                <ul>
-                                    <li><a1 href="#" class="btn">Encender</a1></li>
-                                    <li><a1 href="#" class="btn">Apagar</a1></li>
+                                    <li><a1 href="#" class="btn onhab2">Encender</a1></li>
+                                    <li><a1 href="#" class="btn onhab2">Apagar</a1></li>
                                 </ul>
                             </li>
                            <li><a href="#">Habitación 3</a>
                                 <ul>
-                                    <li><a1 href="#" class="btn">Encender</a1></li>
-                                    <li><a1 href="#" class="btn">Apagar</a1></li>
+                                    <li><a1 href="#" class="btn onhab3">Encender</a1></li>
+                                    <li><a1 href="#" class="btn onhab3">Apagar</a1></li>
                             </ul>
                         </li>
                        </ul>
@@ -72,7 +70,7 @@
                         <li><a href="#" class="btn">Habitación 3:</a>
                     </ul>
                     </li>
-                        
+
                  
                </ul>
            </div>
@@ -85,3 +83,30 @@
     </section>
 </body>
 </html>
+
+
+<?php
+require("/proceso_eventos/conexion.php");
+if(isset($_POST['ON']))			// If press ON
+{	
+			
+			$sql = "UPDATE modos SET hab1   = 1";	// Update present status to database
+			// If don't put this If , we can't change the value in database
+			if ($conn->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+				//$_GET[] = 1;						// why i have to put this line but it still run when it's commented
+			} 
+}
+
+if(isset($_POST['OFF']))		// If press OFF
+{					
+					
+			$sql = "UPDATE modos SET hab2 = 0";	// Update present status to database
+			// Echo "0" , equivalent with send data to App to toast OFF
+			if ($conn->query($sql) === TRUE) {	// Because it's been a long time , so i forgot
+				//$_GET[] = 0;						// why i have to put this line but it still run when it's commented
+			} 
+	
+	
+}			
+
+?>
