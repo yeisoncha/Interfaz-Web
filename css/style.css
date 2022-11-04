@@ -89,7 +89,22 @@ ul, ol {
     display: block;
 }*/
 
+.navegacion button{
+    color: #318aac !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: rgba(0,0,0,0);
+    border-color: #318aac;
+    transition: all 1s ease;
+    position: relative;
+    display: block;
+}
+.navegacion button:hover{
+    background:#b9b7b7;
+    color: rgb(255, 255, 255);
 
+}
 .navegacion li a {
     color: #318aac !important;
     font-size: 20px;
