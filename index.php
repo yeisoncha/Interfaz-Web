@@ -66,7 +66,7 @@
                     
                     <li><a href="#">Estado de iluminación</a>
                     <ul>     
-                        <li><a href="#" class="btn" type="submit" name = "ON3" >ON</button>
+                        <li><a href="#" class="btn" type="submit" name = "ON3" >Habitación 1</button>
                         <li><a href="#" class="btn">Habitación 2:</a>
                         <li><a href="#" class="btn">Habitación 3:</a>
                     </ul>
@@ -238,5 +238,7 @@
 
 <script>
         const modo_header = document.getElementById("modo_header");
-        modo_header.innerText = " " + "<?php $result ?>";
-    </script>
+        modo_header.innerText = "Hola " + "";
+</script>
+
+ <?php $result ?>
