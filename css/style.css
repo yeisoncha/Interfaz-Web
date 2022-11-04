@@ -1,9 +1,10 @@
 
-:root{
+ /* :root{
     --verde: #0c443a;
     --azul: #3381FF; 
     --degradado:linear-gradient(90deg, var(--azul),(var(--verde)));
-}
+} */
+
 
 *{
     margin: 0;
@@ -20,7 +21,7 @@ body{
 }
 
 *::selection{ 
- background: var(--azul);
+ background: #3381FF;
  color: white;
 }
 html{
@@ -170,7 +171,7 @@ ul, ol {
     display: inline-block;
     margin-top: 1rem;
     padding: .8rem 3rem;
-    background: var(--azul);
+    background: #3381FF;
     font-size: 1.8rem;
     color: white;
     cursor: pointer;
@@ -199,26 +200,26 @@ header{
 }
 header .logo{
     font-size: 3rem;
-    color: var(--verde);
+    color: #0c443a;
 }
 header .logo span{
-    color: var(--azul);
+    color: #3381FF;
 }
 
 header .navbar a{
     font-size: 2rem;
     margin-left: 2rem;
-    color: var(--verde);
+    color: #0c443a;
 }
 header .navbar a:hover{
-    color: var(--azul);
+    color: #3381FF;
 }
 header input{
     display: none;
 }
 header label{
     font-size: 3rem;
-    color: var(--verde);
+    color: #0c443a;
     cursor: pointer;
     visibility: hidden;
     opacity: 0;
