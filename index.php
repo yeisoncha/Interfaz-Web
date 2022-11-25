@@ -1,5 +1,5 @@
 <?php
-    require ("conexion.php");
+    require './proceso_eventos/conexion.php';
 ?>
 
 <!DOCTYPE html>
@@ -9,7 +9,6 @@
     <link rel="stylesheet"  type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    
 </head>
 <header>
     <a class="logo">
