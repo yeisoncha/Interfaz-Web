@@ -1,5 +1,7 @@
 <?php
-    require './proceso_eventos/conexion.php';
+    include 'conexion.php';
+
+
 ?>
 
 <!DOCTYPE html>
