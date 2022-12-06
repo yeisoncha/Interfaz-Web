@@ -7,6 +7,6 @@ $user = "root";
 
 $pw = "";
 
-$db = "labiii";
+$db = "sistema_domotico";
 
 ?>
