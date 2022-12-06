@@ -15,25 +15,9 @@
     <a class="logo">
         <span>Sistema domótico</span></a>
         <div class="Iluminacion">
-            <li><a href="#"> Modo de iluminacion actual: <p><?php
-                $mysqli = new mysqli($host, $user, $pw, $db);
-                $sql = "SELECT modo from estados where ID_TARJ=1";
-                $result = $mysqli->query($sql);
-                $row = $result->fetch_array(MYSQLI_NUM);
-                $modo = $row[0];
-                switch($modo){
-                    case 0:
-                        $etiqueta = "REMOTO";
-                    break;
-                    case 1:
-                        $etiqueta = "AUTOMATICO";
-                    break;
-                    case 2:
-                        $etiqueta = "SENSADO";
-                    break;
-                }
-                echo($etiqueta);
-            ?></p></a>
+            <li><a href="check_status.php">  Modo de iluminacion actual: <p>
+
+            </p></a>
                 
         </div>
           <input type="checkbox" id="menu-bar">
@@ -47,20 +31,20 @@
        
 </header>
 <body>
-<form action="" method="POST">
     <section class="inicio" id="inicio">
         <div class="content">
             <h3>ILUMINA<span> TU HOGAR</span></h3>
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
            <ul class="navegacion">
-                    <li><a href="#" >Modos de Iluminacion</a>
-                    <ul>     
-                        
+           <li>
+            <form method="POST" action = "check_status.php">
+            <ul><a>Modos de Iluminacion</a>     
                         <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
                         <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
                         <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
                     </ul>
-                    </li>
+            </form>
+            </li>    
                     <li><a href="#">Encender bombilla</a>
                     <ul>
                            <li><a href="#">Habitación 1</a>
@@ -149,6 +133,8 @@
         </div>
     </section>
 </body>
+
+
 
 </html>
 
