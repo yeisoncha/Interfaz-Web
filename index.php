@@ -48,20 +48,20 @@
        
 </header>
 <body>
-<form action="" method="POST">
     <section class="inicio" id="inicio">
         <div class="content">
             <h3>ILUMINA<span> TU HOGAR</span></h3>
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
            <ul class="navegacion">
-                    <li><a href="#" >Modos de Iluminacion</a>
-                    <ul>     
-                        
+           <li>
+            <form method="POST" action = "check_status.php">
+            <ul><a>Modos de Iluminacion</a>     
                         <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
                         <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
                         <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
                     </ul>
-                    </li>
+            </form>
+            </li>    
                     <li><a href="#">Encender bombilla</a>
                     <ul>
                            <li><a href="#">Habitación 1</a>
@@ -150,6 +150,8 @@
         </div>
     </section>
 </body>
+
+
 
 </html>
 
