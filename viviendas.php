@@ -13,6 +13,8 @@
     <input type="text" id="direccion" name="direccion">
     <label for="numero_habitaciones" name="numero_habitaciones"> Número de habitaciones</label>
     <input type="number" id="numero_habitaciones" name="numero_habitaciones">
+    <label for="codigo_vivienda" name="codigo_vivienda" >Código de la vivienda</label>
+    <input type="text" id="codigo_vivienda" name="codigo_vivienda">
     <button type="submit"> Crear Vivienda</button>
     
     </form>
