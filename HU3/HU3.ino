@@ -8,9 +8,9 @@
 #include <ArduinoJson.h>
 
 
-const char* ssid     = "GET UP";      // SSID
-const char* password = "getup2019";      // Password
-const char* host = "192.168.100.78";  // Dirección IP local o remota, del Servidor Web
+const char* ssid     = "HP_DESKTOP";      // SSID
+const char* password = "Jefferson_Steven23#";      // Password
+const char* host = "192.168.137.1";  // Dirección IP local o remota, del Servidor Web
 const int   port = 80;            // Puerto, HTTP es 80 por defecto, cambiar si es necesario.
 const int   watchdog = 2000;        // Frecuencia del Watchdog
 unsigned long previousMillis = millis(); 
@@ -46,7 +46,6 @@ void setup() {
   pinMode(hab1, OUTPUT);
   pinMode(hab2, OUTPUT);
   pinMode(hab3, OUTPUT);
-  pinMode(hab3, INPUT);
 //-------------------------
 //-------------------------
   Serial.begin(115200);//inicializar puerto serie
@@ -66,7 +65,7 @@ void loop() {
 
   serverPath = "http://";
   serverPath += host;
-  serverPath += "/programas_php/programaprueba.php";
+  serverPath += "/programas_php/sprint1/modeConsult.php";
   serverPath += "?ID_TARJ=";
   serverPath += ID_TARJ;
 

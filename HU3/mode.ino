@@ -1,7 +1,8 @@
 void remote_mode(){
   serverPath = "http://";
   serverPath += host;
-  serverPath += "/programas_php/programapruebaremotemode.php";
+  serverPath += "/programas_php/sprint1/statesConsult.php?ID_TARJ=";
+  serverPath += ID_TARJ;
   String response = get_request(serverPath);
   String rooms[]={"hab1","hab2","hab3"};
   deserializeJSON(response,0);
@@ -60,4 +61,15 @@ void sensing_mode(){
     digitalWrite(hab3,LOW);
   }
 
+  serverPath = "http://";
+  serverPath += host;
+  serverPath += "/programas_php/sprint1/registerSave.php?ID_TARJ=";
+  serverPath += ID_TARJ;
+  serverPath += "&sens1=";
+  serverPath += SensorState[0];
+  serverPath += "&sens2=";
+  serverPath += SensorState[1];
+  serverPath += "&sens3=";
+  serverPath += SensorState[0];
+  String response = get_request(serverPath);
 }
