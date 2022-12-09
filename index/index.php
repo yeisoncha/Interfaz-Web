@@ -20,7 +20,7 @@
                 
             <a href="#inicio">inicio</a>
             <a href="#modo">habitaciones</a>
-            <a href="#login">User123</a>
+            <a href="#login">User1</a>
         </nav>
        
 </header>
@@ -31,13 +31,16 @@
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
            <ul class="navegacion">
            <li>
+            
+            <a>Modos de Iluminación</a>     
+            <ul>
             <form method="POST" action = "check_status.php">
-            <ul><a>Modos de Iluminacion</a>     
                         <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
                         <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
                         <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
-                    </ul>
             </form>
+                    </ul>
+            
             </li>    
                     <li><a href="#">Encender bombilla</a>
                     <ul>
@@ -64,14 +67,12 @@
                     </li>
                     
                     <li><a href="#">Estado de iluminación</a>
-                    <ul>     
-                        <li><a href="#"> Habitacion 1 <p></p></a>
-                        <li><a href="#"> Habitacion 2 <p></p></a>
-                        <li><a href="#"> Habitacion 3 <p></p></a>
-                    </ul>
-                    </li>
-
-                 
+                        <ul>     
+                            <li><a href="#"> Habitacion 1 <p></p></a>
+                            <li><a href="#"> Habitacion 2 <p></p></a>
+                            <li><a href="#"> Habitacion 3 <p></p></a>
+                        </ul>
+                    </li>   
                </ul>
            </div>
            
@@ -82,5 +83,4 @@
         </div>
     </section>
 </body>
-
 </html>
