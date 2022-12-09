@@ -1,0 +1,104 @@
+*{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    text-decoration: none;
+   
+}
+
+html{
+    font-size: 62.4%;
+    overflow: hidden;
+}
+body{
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+    background-image: linear-gradient(to top, #30d078d7 0%, #7f11b3b7 100%), url(../img/10.jpg);
+    font-size: 2rem;
+}
+.inicio input {
+    width: 10%;
+    margin-bottom: 20px;
+}
+.inicio input[type="text"]{
+    
+}
+.inicio button[type="submit"] {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 0.5em 1.2em;
+    background: #318aac;
+    border-color: #318aac;
+    transition: all 1s ease;
+    
+   
+    cursor: pointer;
+  }
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+.heading{
+    text-align: center;
+    background-color: black;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+header .logo {
+    font-size: 2rem;
+    color: #0c443a;
+}
+
+header .navbar a{
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    color: #0c443a;
+}
+
+header .navbar a:hover{
+    color: aqua;
+}
+
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width:768px){
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        background: white;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    }
+}
+@media(max-width:450px){
+    html{
+        font-size: 49%;
+    }
+}

@@ -28,11 +28,7 @@
     <a class="logo">
         <span>Sistema domótico</span></a>
         <div class="Iluminacion">
-
-        <li> <p>Modo de iluminacion actual: <span><?php echo $modo; ?></span></p></li>
-
-             <p><?php
-
+            <li><a href="#"> Modo de iluminacion actual: <p><?php
                 // $mysqli = new mysqli($host, $user, $pw, $db);
                 // $sql = "SELECT modo from estados where ID_TARJ=1";
                 // $result = $mysqli->query($sql);
@@ -51,6 +47,7 @@
                 // }
                 // echo($etiqueta);
             ?></p></a>
+            
         </div>
           <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
@@ -58,7 +55,7 @@
                 
             <a href="#inicio">inicio</a>
             <a href="#modo">habitaciones</a>
-            <a href="#login">User123</a>
+            <a href="#login">User1</a>
         </nav>
        
 </header>
@@ -68,18 +65,18 @@
             <h3>ILUMINA<span> TU HOGAR</span></h3>
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
            <ul class="navegacion">
-                    <li>
-                    
-                        <a href="#">Modos de Iluminacion</a>
-                            <ul>
-                            <form method="POST" action = "../proceso_eventos/check_status.php">
-                                <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
-                                <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
-                                <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
-                            </form>
-                            </ul>
-                    
-                    </li>    
+           <li>
+            
+            <a>Modos de Iluminación</a>     
+            <ul>
+            <form method="POST" action = "check_status.php">
+                        <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
+                        <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
+                        <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
+            </form>
+                    </ul>
+            
+            </li>    
                     <li><a href="#">Encender bombilla</a>
                     <ul>
                            <li><a href="#">Habitación 1</a>
@@ -156,9 +153,9 @@
                         ?></p></a>
                     </ul>
                     </li>
-                    
+
                  
-                 </ul>
+               </ul>
            </div>
            
          </div>
