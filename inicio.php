@@ -19,7 +19,7 @@
         <div>
             <form action="buscar.php" method="post">
                 <input type="text" name="buscar" id="">
-                <button class="btn" type="submit">Buscar</button>
+                <button class="btn" type="submit" value="buscar">Buscar</button>
                 <a href="nuevo.php">nuevo</a>
             </form>
         </div>
