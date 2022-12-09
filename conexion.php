@@ -7,6 +7,6 @@ $user = "root";
 
 $pw = "";
 
-$db = "new";
+$db = "labnew";
 
 ?>
