@@ -9,13 +9,13 @@
           $result = $mysqli->query($sql11);
           $row = $result->fetch_array(MYSQLI_NUM);
           $modo = $row[5];
-          if ($modo==1){
+          if ($modo==0){
              $modo = " Modo Remoto";
              }
-          if ($modo==2){
+          if ($modo==1){
             $modo = " Modo Atomatico";
             }
-         if ($modo==3){
+         if ($modo==2){
                 $modo = " Modo Sensado";
                 }
            

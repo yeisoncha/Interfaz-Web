@@ -19,7 +19,7 @@
         <div>
             <form action="buscar.php" method="post">
                 <input type="text" name="buscar" id="">
-                <button class="btn" type="submit" value="buscar">Buscar</button>
+                <button class="btn" type="submit">Buscar</button>
                 <a href="nuevo.php">nuevo</a>
             </form>
         </div>
@@ -34,8 +34,9 @@
                     <td>Opciones</td>
                 </tr>
                 <?php
-                    $cnx = mysqli_connect("localhost","root","","newiot");
-                    $sql = "SELECT id, dirección, habitaciones, house_code from viviendas order by id asc";
+                    $buscar = $_POST['buscar'];
+                    $cnx = mysqli_connect("localhost","root","","labnew");
+                    $sql = "SELECT id, dirección, habitaciones, house_code FROM viviendas where id like '$buscar' '%' order by id asc";
                     $rta = mysqli_query($cnx,$sql);
                     while ($mostrar = mysqli_fetch_row($rta)){
                     ?>
