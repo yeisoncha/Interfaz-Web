@@ -55,7 +55,7 @@
            <ul class="navegacion">
            <li>
             
-            <a>Modos de Iluminacion</a>     
+            <a>Modos de Iluminación</a>     
             <ul>
             <form method="POST" action = "check_status.php">
                         <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
