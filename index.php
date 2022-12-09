@@ -43,7 +43,7 @@
                 
             <a href="#inicio">inicio</a>
             <a href="#modo">habitaciones</a>
-            <a href="#login">User123</a>
+            <a href="#login">User1</a>
         </nav>
        
 </header>
