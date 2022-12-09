@@ -54,13 +54,16 @@
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
            <ul class="navegacion">
            <li>
+            
+            <a>Modos de Iluminacion</a>     
+            <ul>
             <form method="POST" action = "check_status.php">
-            <ul><a>Modos de Iluminacion</a>     
                         <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
                         <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
                         <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
-                    </ul>
             </form>
+                    </ul>
+            
             </li>    
                     <li><a href="#">Encender bombilla</a>
                     <ul>
