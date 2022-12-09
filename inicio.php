@@ -37,7 +37,7 @@
                     $cnx = mysqli_connect("localhost","root","","newiot");
                     $sql = "SELECT id, direccion, habitacion, house_code from viviendas order by id desc";
                     $rta = mysqli_query($cnx,$sql);
-                    while ($mostrar == mysqli_fetch_row($rta)){
+                    while ($mostrar = mysqli_fetch_row($rta)){
                     ?>
                     <tr>
                         <td><?php echo $mostrar['0']?></td>
