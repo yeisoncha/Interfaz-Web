@@ -30,12 +30,12 @@
                     <td>ID</td>
                     <td>Direccion</td>
                     <td>Habitaciones</td>
-                    <td>House Code</td>
+                    <td>Codigo</td>
                     <td>Opciones</td>
                 </tr>
                 <?php
                     $cnx = mysqli_connect("localhost","root","","newiot");
-                    $sql = "SELECT id, dirección, habitaciones, house_code from viviendas order by id desc";
+                    $sql = "SELECT id, dirección, habitaciones, house_code from viviendas order by id asc";
                     $rta = mysqli_query($cnx,$sql);
                     while ($mostrar = mysqli_fetch_row($rta)){
                     ?>
@@ -45,7 +45,12 @@
                         <td><?php echo $mostrar['2']?></td>
                         <td><?php echo $mostrar['3']?></td>
                         <td>
-                            <a href="editar.php">Editar</a>
+                            <a href="editar.php?
+                            id=<?php echo $mostrar['0']?>
+                            dirección=<?php echo $mostrar['1']?>
+                            habitaciones=<?php echo $mostrar['2']?>
+                            house_code=<?php echo $mostrar['3']?>
+                            ">Editar</a>
                             <a href="eliminar.php">Eliminar</a>
                         </td>
                     </tr>

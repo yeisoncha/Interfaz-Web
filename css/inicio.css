@@ -26,9 +26,6 @@ body{
     width: 10%;
     margin-bottom: 20px;
 }
-.inicio input[type="text"]{
-    
-}
 .inicio button[type="submit"] {
     color: white;
     font-size: 20px;

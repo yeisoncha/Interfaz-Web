@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/inicio.css">
-    <title>Nueva Casa</title>
+    <title>Editar Casa</title>
 </head>
 <header>
 <a href="#" class="logo">
@@ -15,26 +15,34 @@
         </nav>
 </header>
 <body>
+<?php
+$ID = $_GET['id'];
+$Direccion = $_GET['dirección'];
+$Habitaciones = $_GET['habitaciones'];
+$Codigo = $_GET['house_code'];
+?>
     <div>
-        <form action="sp_insertar.php" method="post">
+        <form action="sp_editar.php" method="get">
             <table border="1">
                 <tr>
                     <td>Ingresar Datos</td>
+                    <td><input type="text" name="id" id="" value="<?=$ID?>"></td>
                 </tr>
                 <tr>
                     <td>Direccion:</td>
-                    <td><input type="text" name="dirección" id=""></td>
+                    <td><input type="text" name="dirección" id="" value="<?=$Direccion?>"></td>
                 </tr>
                 <tr>
                     <td>Numero De Habitaciones:</td>
-                    <td><input type="text" name="habitaciones" id=""></td>
+                    <td><input type="text" name="habitaciones" id="" value="<?=$Habitaciones?>"></td>
                 </tr>
                 <tr>
                 <td>Codigo:</td>
-                    <td><input type="text" name="house_code" id=""></td>
+                    <td><input type="text" name="house_code" id="" value="<?=$Codigo?>"></td>
                 </tr>
                 <tr>
-                    <td><button type="submit">Guardar</button>
+                    <td><button type="submit">Actualizar</button>
+                    <td><a href="inicio.php">Cancelar</a></td>
                 </tr>      
         </form>
     </div>
