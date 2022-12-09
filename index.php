@@ -1,8 +1,20 @@
 <?php
     include 'conexion.php';
-
+    
 
 ?>
+
+<?php 
+          $mysqli = new mysqli($host, $user, $pw, $db);
+          $sql11 = "SELECT * from estados";
+          $result = $mysqli->query($sql11);
+          $row = $result->fetch_array(MYSQLI_NUM);
+          $modo = $row[4];
+            
+            
+            ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +29,9 @@
         <span>Sistema domótico</span></a>
         <div class="Iluminacion">
 
-            <li><a href="#"> Modo de iluminacion actual: 1 <p><?php
+        <li> <p>Modo de iluminacion actual: <span><?php echo $modo; ?></span></p></li>
+
+             <p><?php
 
                 // $mysqli = new mysqli($host, $user, $pw, $db);
                 // $sql = "SELECT modo from estados where ID_TARJ=1";
@@ -37,7 +51,6 @@
                 // }
                 // echo($etiqueta);
             ?></p></a>
-                
         </div>
           <input type="checkbox" id="menu-bar">
         <label for="menu-bar" class="fa fa-bars"></label>
