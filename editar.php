@@ -22,7 +22,7 @@ $Habitaciones = $_GET['habitaciones'];
 $Codigo = $_GET['house_code'];
 ?>
     <div>
-        <form action="sp_editar.php" method="get">
+        <form action="sp_editar.php" method="post">
             <table border="1">
                 <tr>
                     <td>Ingresar Datos</td>
