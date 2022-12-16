@@ -82,7 +82,7 @@
                     <th>Opciones</th>
                 </tr>
                 <?php
-                    $cnx = mysqli_connect("localhost","root","","newiot");
+                    $cnx = mysqli_connect("localhost:3307","root","","newiot");
                     $sql = "SELECT id, dirección, habitaciones, house_code from viviendas order by id asc";
                     $rta = mysqli_query($cnx,$sql);
                     while ($mostrar = mysqli_fetch_row($rta)){
