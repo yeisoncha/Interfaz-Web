@@ -9,6 +9,15 @@ get_ipython().system('pip3 install sklearn')
 get_ipython().system('pip3 install mysqlclient')
 
 
+import sys
+arg1 = sys.argv[1]
+arg2 = sys.argv[2]
+arg3 = sys.argv[3]
+
+print(arg1)
+print(arg2)
+print(arg3)
+
 # In[1]:
 
 
