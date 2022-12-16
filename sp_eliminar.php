@@ -1,13 +1,15 @@
 <?php
- $ID = $_GET['id'];
+include "conexion.php";
+include "metodos.php";
 
- $cnx = mysqli_connect("localhost","root","","newiot");
- $sql = "DELETE  FROM viviendas where id like $ID";
- $rta = mysqli_query($cnx,$sql);
- if (!$rta){
-    echo "No se elimino";
+ $id = $_GET['id'];
+
+ $obj = new metodos();
+ if($obj->eliminarDatos($id)==1){
+   header("location:nuevo.php");
+ }else{
+   echo "Fallo";
  }
- else{
-    header("Location: inicio.php");
- }
+
+
 ?>

@@ -1,51 +1,41 @@
+<?php
+include "conexion.php";
+$obj = new conectar();
+$conexion = $obj->conexion();
+$id = $_GET['id'];
+$sql = "SELECT dirección,habitaciones,house_code from viviendas where id='$id'";
+$result = mysqli_query($conexion, $sql);
+$ver = mysqli_fetch_row($result);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/inicio.css">
-    <title>Editar Casa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar</title>
 </head>
-<header>
-<a href="#" class="logo">
-        <span>Sistema domotico</span></a>
-        <nav class="navbar">
-            <a href="#inicio">Inicio</a>
-            <a href="crear">Crear casa</a>
-            <a href="#Usuario123">Usuario123</a>
-        </nav>
-</header>
 <body>
-<?php
-$ID = $_GET['id'];
-$Direccion = $_GET['dirección'];
-$Habitaciones = $_GET['habitaciones'];
-$Codigo = $_GET['house_code'];
-?>
-    <div>
-        <form action="sp_editar.php" method="post">
-            <table border="1">
-                <tr>
-                    <td>Ingresar Datos</td>
-                    <td><input type="text" name="id" id="" value="<?=$ID?>"></td>
-                </tr>
-                <tr>
-                    <td>Direccion:</td>
-                    <td><input type="text" name="dirección" id="" value="<?=$Direccion?>"></td>
-                </tr>
-                <tr>
-                    <td>Numero De Habitaciones:</td>
-                    <td><input type="text" name="habitaciones" id="" value="<?=$Habitaciones?>"></td>
-                </tr>
-                <tr>
-                <td>Codigo:</td>
-                    <td><input type="text" name="house_code" id="" value="<?=$Codigo?>"></td>
-                </tr>
-                <tr>
-                    <td><button type="submit">Actualizar</button>
-                    <td><a href="inicio.php">Cancelar</a></td>
-                </tr>      
-        </form>
-    </div>
-    
+<form action="actualizar.php" method="post">
+    <input type="text" hidden="" value="<?php echo $id?>" name="id">
+    <label>Direccion</label>
+    <p></p>
+    <input type="text" name="txtdireccion" value="<?php echo $ver[0] ?>">
+    <p></p>
+    <label>Habitaciones</label>
+    <p></p>
+    <input type="text" name ="txthabitacion"  value="<?php echo $ver[1] ?>">
+    <p></p>
+    <label>Codigo</label>
+    <p></p>
+    <input type="text" name="txtcode"  value="<?php echo $ver[2] ?>">
+    <p></p>
+    <button>Agregar</button>
+
+
+
+</form>
 </body>
 </html>

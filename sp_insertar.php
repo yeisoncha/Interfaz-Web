@@ -1,16 +1,17 @@
 <?php
- $Direccion = $_POST['dirección'];
- $Habitaciones = $_POST['habitaciones'];
- $Codigo = $_POST['house_code'];
+include "conexion.php";
+include "metodos.php";
 
+ $direccion = $_POST['txtdireccion'];
+ $habitaciones = $_POST['txthabitacion'];
+ $codigo = $_POST['txtcode'];
 
- $cnx = mysqli_connect("localhost","root","","labnew");
- $sql = "INSERT INTO viviendas(dirección,habitaciones,house_code) VALUES('$Direccion','$Habitaciones','$Codigo')";
- $rta = mysqli_query($cnx,$sql);
- if (!$rta){
-    echo "No se inserto";
+ $datos = array($direccion, $habitaciones, $codigo);
+ $obj= new metodos();
+ if($obj->insertarDatos($datos)==1){
+     header("location:nuevo.php");
+ }else{
+     echo "Fallo al agregar";
  }
- else{
-    header("Location: inicio.php");
- }
+ 
 ?>
