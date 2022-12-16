@@ -35,8 +35,8 @@
 <header>
     <a class="logo">
         <span>Sistema domótico</span></a>
-        <div class="Iluminacion">
-        <li><a>Modo de iluminacion actual: <span><?php echo $modo; ?></span></a></li>
+        <div class="Iluminacion"><br>
+        <li><a>Iluminacion: <span><?php echo $modo; ?></span></a></li>
             <?php
                 // $mysqli = new mysqli($host, $user, $pw, $db);
                 // $sql = "SELECT modo from estados where ID_TARJ=1";
@@ -62,8 +62,9 @@
         <label for="menu-bar" class="fa fa-bars"></label>
              <nav class="navbar">
                 
-            <a href="#inicio">inicio</a>
-            <a href="#modo">habitaciones</a>
+            <a href="index.php">Inicio</a>
+            <a href="inicio.php">Casas</a>
+            <a href="habitantes.php">Habitantes</a>
             <a href="#login">User1</a>
         </nav>
        
@@ -71,11 +72,65 @@
 <body>
     <section class="inicio" id="inicio">
         <div class="content">
-            <h3>ILUMINA<span> TU HOGAR</span></h3>
+            <h3>ILUMINA TU HOGAR</span></h3>
            <!-- <a href="#" class="btn">Cambiar habitacion</a>-->
-           <ul class="navegacion">
-           <li>
+           <h4>Estado de iluminación</h4>
+                        <br>
+                        <a3> Habitación 1: </a3>
+
+                        <?php
+                             $mysqli = new mysqli($host, $user, $pw, $db);
+                             $sql = "SELECT hab1 from estados where ID_TARJ=1";
+                             $result = $mysqli->query($sql);
+                             $row = $result->fetch_array(MYSQLI_NUM);
+                             $modo = $row[0];
+                             switch($modo){
+                                 case 0:
+                                     $etiqueta = "";?><img src="img/apagado.png" width="25px" height="25px"><?php
+                                 break;
+                                 case 1:
+                                     $etiqueta = "";?><img src="img/encendido.png" width="25px" height="25px"><?php
+                                 break;
+                             }
+                             echo($etiqueta);
+                        ?>
+                        <a3> Habitación 2: </a3><?php
+                             $mysqli = new mysqli($host, $user, $pw, $db);
+                             $sql = "SELECT hab2 from estados where ID_TARJ=1";
+                             $result = $mysqli->query($sql);
+                             $row = $result->fetch_array(MYSQLI_NUM);
+                             $modo = $row[0];
+                             switch($modo){
+                                case 0:
+                                    $etiqueta = "";?><img src="img/apagado.png" width="25px" height="25px"><?php
+                                break;
+                                case 1:
+                                    $etiqueta = "";?><img src="img/encendido.png" width="25px" height="25px"><?php
+                                break;
+                            }
+                             echo($etiqueta);
+                        ?>
+                        <a3> Habitación 3: </a3><?php
+                             $mysqli = new mysqli($host, $user, $pw, $db);
+                             $sql = "SELECT hab3 from estados where ID_TARJ=1";
+                             $result = $mysqli->query($sql);
+                             $row = $result->fetch_array(MYSQLI_NUM);
+                             $modo = $row[0];
+                             switch($modo){
+                                case 0:
+                                    $etiqueta = "";?><img src="img/apagado.png" width="25px" height="25px"><?php
+                                break;
+                                case 1:
+                                    $etiqueta = "";?><img src="img/encendido.png" width="25px" height="25px"><?php
+                                break;
+                            }
+                             echo($etiqueta);
+                        ?>
             
+           <ul class="navegacion">
+           <br>
+           <li>                
+                 
             <a>Modos de Iluminación</a>     
             <ul>
             
@@ -110,58 +165,7 @@
                     </li>
                     </li>
                     
-                    <li><a href="#">Estado de iluminación</a>
-                    <ul>     
-                        <li><a href="#"> Habitacion 1 <p><?php
-                             $mysqli = new mysqli($host, $user, $pw, $db);
-                             $sql = "SELECT hab1 from estados where ID_TARJ=1";
-                             $result = $mysqli->query($sql);
-                             $row = $result->fetch_array(MYSQLI_NUM);
-                             $modo = $row[0];
-                             switch($modo){
-                                 case 0:
-                                     $etiqueta = "apagado";
-                                 break;
-                                 case 1:
-                                     $etiqueta = "encendido";
-                                 break;
-                             }
-                             echo($etiqueta);
-                        ?></p></a>
-                        <li><a href="#"> Habitacion 2 <p><?php
-                             $mysqli = new mysqli($host, $user, $pw, $db);
-                             $sql = "SELECT hab2 from estados where ID_TARJ=1";
-                             $result = $mysqli->query($sql);
-                             $row = $result->fetch_array(MYSQLI_NUM);
-                             $modo = $row[0];
-                             switch($modo){
-                                 case 0:
-                                     $etiqueta = "apagado";
-                                 break;
-                                 case 1:
-                                     $etiqueta = "encendido";
-                                 break;
-                             }
-                             echo($etiqueta);
-                        ?></p></a>
-                        <li><a href="#"> Habitacion 3 <p><?php
-                             $mysqli = new mysqli($host, $user, $pw, $db);
-                             $sql = "SELECT hab3 from estados where ID_TARJ=1";
-                             $result = $mysqli->query($sql);
-                             $row = $result->fetch_array(MYSQLI_NUM);
-                             $modo = $row[0];
-                             switch($modo){
-                                 case 0:
-                                     $etiqueta = "apagado";
-                                 break;
-                                 case 1:
-                                     $etiqueta = "encendido";
-                                 break;
-                             }
-                             echo($etiqueta);
-                        ?></p></a>
-                    </ul>
-                    </li>
+                    
 
                  
                </ul>
