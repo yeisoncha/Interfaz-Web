@@ -34,7 +34,7 @@
                     <td>Opciones</td>
                 </tr>
                 <?php
-                    $cnx = mysqli_connect("localhost","root","","newiot");
+                    $cnx = mysqli_connect("localhost","root","","labnew");
                     $sql = "SELECT id, dirección, habitaciones, house_code from viviendas order by id asc";
                     $rta = mysqli_query($cnx,$sql);
                     while ($mostrar = mysqli_fetch_row($rta)){
@@ -51,7 +51,7 @@
                             habitaciones=<?php echo $mostrar['2']?>
                             house_code=<?php echo $mostrar['3']?>
                             ">Editar</a>
-                            <a href="eliminar.php">Eliminar</a>
+                            <a href="eliminar.php? <?php echo $mostrar['0']?>">Eliminar</a>
                         </td>
                     </tr>
                     <?php
