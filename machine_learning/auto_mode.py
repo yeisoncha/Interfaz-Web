@@ -9,6 +9,15 @@ get_ipython().system('pip3 install sklearn')
 get_ipython().system('pip3 install mysqlclient')
 
 
+import sys
+arg1 = sys.argv[1]
+arg2 = sys.argv[2]
+arg3 = sys.argv[3]
+
+print(arg1)
+print(arg2)
+print(arg3)
+
 # In[1]:
 
 
@@ -101,7 +110,7 @@ print(precision_score(ytest, y_model, average='macro'))
 # In[22]:
 
 
-y_model=model.predict([[10,111,1]])
+y_model=model.predict([[arg1,arg2,arg3]])
 print("Accion predicha con los valores ingresados en el algoritmo:")
 print(y_model)
 

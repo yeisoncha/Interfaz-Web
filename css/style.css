@@ -10,6 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border-radius: none;
     border: none;
     outline: none;
     text-transform: capitalize;
@@ -53,6 +54,7 @@ section{
   li, a {
     list-style-type: none;
 }
+
 /*Boton cambiar habitacion*/
 /*.btn{
     display: inline-block;
@@ -224,18 +226,36 @@ header label{
     visibility: hidden;
     opacity: 0;
 }
-.inicio{
-    display: flex;
+.inicio{    
+    display: block;
+    margin-top: 50px;
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(to top, #4eb987d7 0%, #7f11b3b7 100%), url(../img/10.jpg);
 
 }
+
+.inicio form{    
+    align-items: center;
+    justify-content: center;
+}
+
 .inicio .content h3{
     font-size: 5.5rem;
     color: #333;
     text-transform: uppercase;
 }
+
+.inicio .content h4{
+    font-size: 20px;
+    color: #042f74;
+}
+
+.inicio .content a3{
+    font-size: 30px;
+    color: rgb(57, 57, 58);
+}
+
 .inicio .content p{
     font-size: 2.3rem;
     color: #666;
@@ -297,3 +317,44 @@ header label{
         font-size: 49%;
     }
 }
+
+/* inicio */
+
+.inicio input {
+    width: auto;
+    height: 40px;
+    margin-bottom: 10px;
+    
+}
+
+
+  /*tabla*/
+  #customers {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    background: #e7dcdc;
+    border: 1px solid #3381FF;
+    padding: 10px;
+    color:#000000 ;
+    text-align: center;
+    font-weight: bold;
+    
+}
+  
+  
+  
+  #customers tr:hover {
+    background-color: #3381FF;
+    color:#ffff ;
+}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #3381FF;
+    color: white;
+  }

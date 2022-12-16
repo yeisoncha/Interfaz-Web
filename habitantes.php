@@ -45,9 +45,9 @@
         <label for="menu-bar" class="fa fa-bars"></label>
              <nav class="navbar">
                 
-            <a href="inicio.php">Inicio</a>
-            <a href="#modo">Habitaciones</a>
-            <a href="#modo">Habitantes</a>
+             <a href="index.php">Inicio</a>
+            <a href="inicio.php">Casas</a>
+            <a href="habitantes.php">Habitantes</a>
             <a href="#login">User1</a>
         </nav>
                 
@@ -67,33 +67,40 @@
             <br></br>
 
 
-        <div>
             <table id="customers">
+
                 <tr>
                     <th>ID</th>
-                    <th>Direccion</th>
-                    <th>Habitaciones</th>
-                    <th>Codigo</th>
-                    <th>Opciones</th>
+                    
+                    <th>NOMBRE</th>
+                   
+                    <th>CASA</th>
+                  
+                    <th>TELEFONO</th>
+                  
+                    <th>OPCIONES</th>
                 </tr>
                 <?php
-                    $buscar = $_POST['buscar'];
                     $cnx = mysqli_connect("localhost","root","","newiot");
-                    $sql = "SELECT id, dirección, habitaciones, house_code FROM viviendas where house_code  like '$buscar' '%' order by id asc";
+                    $sql = "SELECT id, nombre, casa, telefono from habitantes order by id asc";
                     $rta = mysqli_query($cnx,$sql);
                     while ($mostrar = mysqli_fetch_row($rta)){
                     ?>
                     <tr>
                         <td><?php echo $mostrar['0']?></td>
+                      
                         <td><?php echo $mostrar['1']?></td>
+                       
                         <td><?php echo $mostrar['2']?></td>
+                    
                         <td><?php echo $mostrar['3']?></td>
+                      
                         <td>
                             <a href="editar.php?
                             id=<?php echo $mostrar['0']?>
-                            dirección=<?php echo $mostrar['1']?>
-                            habitaciones=<?php echo $mostrar['2']?>
-                            house_code=<?php echo $mostrar['3']?>
+                            nombre=<?php echo $mostrar['1']?>
+                            casa=<?php echo $mostrar['2']?>
+                            telefono=<?php echo $mostrar['3']?>
                             "><img src="img/editar.png" width="25px" height="25px"></a>
                             <a>  </a>
                             <a href="eliminar.php? <?php echo $mostrar['0']?>"><img src="img/eliminar.png" width="25px" height="25px"></a>
@@ -103,7 +110,10 @@
                     }
                     ?>
             </table>
-        </div>
-    </section>  
+        </section>
 </body>
+
+<footer>
+    
+</footer>
 </html>

@@ -1,37 +1,85 @@
+<?php
+    include 'conexion.php';
+    
+
+?>
+<?php 
+          $mysqli = new mysqli($host, $user, $pw, $db);
+          $sql11 = "SELECT * from estados";
+          $result = $mysqli->query($sql11);
+          $row = $result->fetch_array(MYSQLI_NUM);
+          $modo = $row[5];
+          if ($modo==0){
+             $modo = " Modo Remoto";
+             }
+          if ($modo==1){
+            $modo = " Modo Atomatico";
+            }
+         if ($modo==2){
+                $modo = " Modo Sensado";
+                }
+           
+            
+            ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Domotic System</title>
-    <link rel="stylesheet"  href="css/inicio.css">
+    <link rel="stylesheet"  type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
+
+
 <header>
-    <a href="#" class="logo">
-        <span>Sistema domotico</span></a>
-        <nav class="navbar">
-            <a href="#inicio">Inicio</a>
-            <a href="crear">Crear casa</a>
-            <a href="#Usuario123">Usuario123</a>
-        </nav>
-</header>
-<body>
-    <section class="inicio" id="inicio">
-        <h1 class="heading">BUSCAR CASA</h1>
-        <div>
-            <form action="buscar.php" method="post">
-                <input type="text" name="buscar" id="">
-                <button class="btn" type="submit" value="buscar">Buscar</button>
-                <a href="nuevo.php">nuevo</a>
-            </form>
+    <a class="logo">
+        <span>Sistema domótico</span></a>
+        
+
+        <div class="Iluminacion"><br>
+        <li><a>Iluminacion: <span><?php echo $modo; ?></span></a></li>
+        </a>
+           
         </div>
-    
-        <div>
-            <table border="1">
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar" class="fa fa-bars"></label>
+             <nav class="navbar">
+                
+            <a href="index.php">Inicio</a>
+            <a href="inicio.php">Casas</a>
+            <a href="habitantes.php">Habitantes</a>
+            <a href="#login">User1</a>
+        </nav>
+                
+        
+        </header>
+
+
+<body>
+<section class="inicio">
+
+
+
+            <form action="buscar.php">
+                <input type="text" name="buscar" id="" placeholder="Buscar">
+                <button class="btn" type="submit" value="buscar" >Buscar</button>
+                <a></a>
+                <button class="btn" type="submit" href="nuevo.php"> Nuevo   </button>
+            </form>
+            <br></br>
+
+            <table id="customers">
+
                 <tr>
-                    <td>ID</td>
-                    <td>Direccion</td>
-                    <td>Habitaciones</td>
-                    <td>Codigo</td>
-                    <td>Opciones</td>
+                    <th>ID</th>
+                    
+                    <th>Direccion</th>
+                   
+                    <th>Habitaciones</th>
+                  
+                    <th>Codigo</th>
+                  
+                    <th>Opciones</th>
                 </tr>
                 <?php
                     $cnx = mysqli_connect("localhost:3307","root","","newiot");
@@ -41,24 +89,32 @@
                     ?>
                     <tr>
                         <td><?php echo $mostrar['0']?></td>
+                      
                         <td><?php echo $mostrar['1']?></td>
+                       
                         <td><?php echo $mostrar['2']?></td>
+                    
                         <td><?php echo $mostrar['3']?></td>
+                      
                         <td>
                             <a href="editar.php?
                             id=<?php echo $mostrar['0']?>
                             dirección=<?php echo $mostrar['1']?>
                             habitaciones=<?php echo $mostrar['2']?>
                             house_code=<?php echo $mostrar['3']?>
-                            ">Editar</a>
-                            <a href="sp_eliminar.php? <?php echo $mostrar['0']?>">Eliminar</a>
+                            "><img src="img/editar.png" width="25px" height="25px"></a>
+                            <a>  </a>
+                            <a href="eliminar.php? <?php echo $mostrar['0']?>"><img src="img/eliminar.png" width="25px" height="25px"></a>
                         </td>
                     </tr>
                     <?php
                     }
                     ?>
             </table>
-        </div>
-    </section>  
+        </section>
 </body>
+
+<footer>
+    
+</footer>
 </html>

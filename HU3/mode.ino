@@ -10,17 +10,31 @@ void remote_mode(){
 }
 
 void automatic_mode(){
-  delay(10000);
-  roomState[0]=1;
-  roomState[1]=1;
-  roomState[2]=1;
-  onOff();
-  delay(10000);
-  roomState[0]=0;
-  roomState[1]=0;
-  roomState[2]=0;
-  onOff();
-  delay(10000);
+  if(auto_millis == 0){
+    auto_millis = millis();
+  }
+  else{
+    if((millis() - auto_millis) > 30000){
+      serverPath = "http://";
+      serverPath += host;
+      serverPath += "/Interfaz-Web/apiArd/auto_mode.php?room=";
+      serverPath += 1;
+      String response = get_request(serverPath);
+      
+      serverPath = "http://";
+      serverPath += host;
+      serverPath += "/Interfaz-Web/apiArd/auto_mode.php?room=";
+      serverPath += 2;
+      String response = get_request(serverPath);
+      
+      serverPath = "http://";
+      serverPath += host;
+      serverPath += "/Interfaz-Web/apiArd/auto_mode.php?room=";
+      serverPath += 3;
+      String response = get_request(serverPath);
+    }
+  }
+
 }
 
 void sensing_mode(){
