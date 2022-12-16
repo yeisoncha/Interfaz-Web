@@ -17,6 +17,7 @@ unsigned long previousMillis = millis();
 unsigned long onOffDelay;
 unsigned long previousonOffDelay;
 unsigned long auto_millis=0;
+unsigned long temp_millis=0;
 
 
 #define hab1 13 // Salida para el control de un relay, control iluminación habitacion 1
@@ -141,15 +142,24 @@ void onOff(){
       }  
     }
   }
-  serverPath = "http://";
-  serverPath += host;
-  serverPath += "/Interfaz-Web/apiArd/registerSave.php?ID_TARJ=";
-  serverPath += ID_TARJ;
-  serverPath += "&hab1=";
-  serverPath += roomState[0];
-  serverPath += "&hab2=";
-  serverPath += roomState[1];
-  serverPath += "&hab3=";
-  serverPath += roomState[2];
-  String response = get_request(serverPath);   
+  if(temp_millis == 0){
+    temp_millis = millis();
+  }
+  else{
+    if(millis()-temp_millis > 30000){
+      temp_millis = millis();
+      serverPath = "http://";
+      serverPath += host;
+      serverPath += "/Interfaz-Web/apiArd/registerSave.php?ID_TARJ=";
+      serverPath += ID_TARJ;
+      serverPath += "&hab1=";
+      serverPath += roomState[0];
+      serverPath += "&hab2=";
+      serverPath += roomState[1];
+      serverPath += "&hab3=";
+      serverPath += roomState[2];
+      String response = get_request(serverPath);
+    }
+  }
+     
 }
