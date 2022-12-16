@@ -7,7 +7,7 @@
  $cnx = mysqli_connect("localhost","root","","newiot");
  $sql = "INSERT INTO viviendas(dirección,habitaciones,house_code) VALUES('$Direccion','$Habitaciones','$Codigo')";
  $rta = mysqli_query($cnx,$sql);
- if (!rta){
+ if (!$rta){
     echo "No se inserto";
  }
  else{
