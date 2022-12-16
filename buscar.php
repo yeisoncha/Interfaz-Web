@@ -35,7 +35,7 @@
                 </tr>
                 <?php
                     $buscar = $_POST['buscar'];
-                    $cnx = mysqli_connect("localhost","root","","labnew");
+                    $cnx = mysqli_connect("localhost","root","","newiot");
                     $sql = "SELECT id, dirección, habitaciones, house_code FROM viviendas where house_code  like '$buscar' '%' order by id asc";
                     $rta = mysqli_query($cnx,$sql);
                     while ($mostrar = mysqli_fetch_row($rta)){
@@ -52,7 +52,7 @@
                             habitaciones=<?php echo $mostrar['2']?>
                             house_code=<?php echo $mostrar['3']?>
                             ">Editar</a>
-                            <a href="eliminar.php">Eliminar</a>
+                            <a href="sp_eliminar.php">Eliminar</a>
                         </td>
                     </tr>
                     <?php
