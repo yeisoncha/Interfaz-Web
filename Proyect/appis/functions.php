@@ -7,7 +7,7 @@
         $mode =  $row[0];
         $room_status = get_room_status($ID_TARJ,$mysqli);
         $room_status_json = json_encode($room_status);
-        header("Location: /Interfaz-Web/Proyect/index.php?mode=$mode&room_status=$room_status_json");
+        header("Location: /Interfaz-Web/index.php?mode=$mode&room_status=$room_status_json");
         
     }
 
@@ -28,7 +28,7 @@
         if($hab1 == 0 && $hab2 == 0 && $hab3 == 0){
             $sql = "UPDATE estados SET modo=$mode WHERE ID_TARJ=$ID_TARJ";
             $result = $mysqli->query($sql);
-            header("Location: /Interfaz-Web/Proyect/index/index.php");
+            header("Location: /Interfaz-Web/index.php");
         }
         else{
             $message = "Todas la luces deben estar apagadas";

@@ -1,26 +1,49 @@
 <?php
-    include 'conexion.php';
+    include "Proyect/connection/conexion.php";
+    include "Proyect/appis/functions.php";
+    $mysqli = connect();
+    $ID_TARJ = 1;
+    if(!isset($_GET['mode'])){
+        get_status($ID_TARJ,$mysqli);
+    }
+    $mode = $_GET['mode'];
+    if($mode == 0){
+        $mode = " Modo Remoto";
+    }
+    elseif($mode == 1){
+        $mode = " Modo Automatico";
+    }
+    elseif($mode == 2){
+        $mode = " Modo Sensado";
+    }
+    $room_status_json = $_GET['room_status'];
+    $room_status = json_decode($room_status_json);
+    $hab1 = $room_status[0];
+    if($hab1 == 1){
+        $hab1 = "encendido";
+    }
+    else{
+        $hab1 = "apagado";
+    }
+    $hab2 = $room_status[1];
+    if($hab2 == 1){
+        $hab2 = "encendido";
+    }
+    else{
+        $hab2 = "apagado";
+    }
+    $hab3 = $room_status[2];
+    if($hab3 == 1){
+        $hab3 = "encendido";
+    }
+    else{
+        $hab3 = "apagado";
+    }
     
 
 ?>
-<?php 
-          $mysqli = new mysqli($host, $user, $pw, $db);
-          $sql11 = "SELECT * from estados";
-          $result = $mysqli->query($sql11);
-          $row = $result->fetch_array(MYSQLI_NUM);
-          $modo = $row[5];
-          if ($modo==0){
-             $modo = " Modo Remoto";
-             }
-          if ($modo==1){
-            $modo = " Modo Atomatico";
-            }
-         if ($modo==2){
-                $modo = " Modo Sensado";
-                }
-           
-            
-            ?>
+
+
 
 
 
@@ -36,7 +59,7 @@
     <a class="logo">
         <span>Sistema domótico</span></a>
         <div class="Iluminacion"><br>
-        <li><a>Iluminacion: <span><?php echo $modo; ?></span></a></li>
+        <li><a>Iluminacion: <span><?php echo $mode; ?></span></a></li>
             <?php
                 // $mysqli = new mysqli($host, $user, $pw, $db);
                 // $sql = "SELECT modo from estados where ID_TARJ=1";
@@ -79,52 +102,13 @@
                         <a3> Habitación 1: </a3>
 
                         <?php
-                             $mysqli = new mysqli($host, $user, $pw, $db);
-                             $sql = "SELECT hab1 from estados where ID_TARJ=1";
-                             $result = $mysqli->query($sql);
-                             $row = $result->fetch_array(MYSQLI_NUM);
-                             $modo = $row[0];
-                             switch($modo){
-                                 case 0:
-                                     $etiqueta = "";?><img src="img/apagado.png" width="25px" height="25px"><?php
-                                 break;
-                                 case 1:
-                                     $etiqueta = "";?><img src="img/encendido.png" width="25px" height="25px"><?php
-                                 break;
-                             }
-                             echo($etiqueta);
+                             
                         ?>
                         <a3> Habitación 2: </a3><?php
-                             $mysqli = new mysqli($host, $user, $pw, $db);
-                             $sql = "SELECT hab2 from estados where ID_TARJ=1";
-                             $result = $mysqli->query($sql);
-                             $row = $result->fetch_array(MYSQLI_NUM);
-                             $modo = $row[0];
-                             switch($modo){
-                                case 0:
-                                    $etiqueta = "";?><img src="img/apagado.png" width="25px" height="25px"><?php
-                                break;
-                                case 1:
-                                    $etiqueta = "";?><img src="img/encendido.png" width="25px" height="25px"><?php
-                                break;
-                            }
-                             echo($etiqueta);
+                             
                         ?>
                         <a3> Habitación 3: </a3><?php
-                             $mysqli = new mysqli($host, $user, $pw, $db);
-                             $sql = "SELECT hab3 from estados where ID_TARJ=1";
-                             $result = $mysqli->query($sql);
-                             $row = $result->fetch_array(MYSQLI_NUM);
-                             $modo = $row[0];
-                             switch($modo){
-                                case 0:
-                                    $etiqueta = "";?><img src="img/apagado.png" width="25px" height="25px"><?php
-                                break;
-                                case 1:
-                                    $etiqueta = "";?><img src="img/encendido.png" width="25px" height="25px"><?php
-                                break;
-                            }
-                             echo($etiqueta);
+                            
                         ?>
             
            <ul class="navegacion">

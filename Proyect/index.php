@@ -58,11 +58,11 @@
             <a>Modos de Iluminación</a>   
             
             <ul>
-            <form action="hola" method = "get">
+            <!--<form action="hola" method = "get">-->
                     <button class="btn" type="submit" name = "MODE" value="0">Modo Remoto</button>
                     <button class="btn" type="submit" name = "MODE" value="1">Modo Automatico</button>
                     <button class="btn" type="submit" name = "MODE" value="2">Modo Sensado</button>
-            </form>
+            <!--</form>-->
             </ul>
               
             
@@ -112,6 +112,6 @@
 </html>
 <?php
     if(!isset($_GET['mode'])){
-        
+        set_mode($ID_TARJ,$_GET['mode'],$mysqli);
     }
 ?>
