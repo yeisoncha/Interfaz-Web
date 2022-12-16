@@ -65,7 +65,7 @@ void loop() {
 
   serverPath = "http://";
   serverPath += host;
-  serverPath += "/programas_php/sprint1/modeConsult.php";
+  serverPath += "/Interfaz-Web/apiArd/modeConsult.php";
   serverPath += "?ID_TARJ=";
   serverPath += ID_TARJ;
 
@@ -99,6 +99,7 @@ void loop() {
       sensing_mode();
       break;
   }
+  
 }
 
 void onOff(){
@@ -138,5 +139,16 @@ void onOff(){
         break;
       }  
     }
-  }   
+  }
+  serverPath = "http://";
+  serverPath += host;
+  serverPath += "/Interfaz-Web/apiArd/registerSave.php?ID_TARJ=";
+  serverPath += ID_TARJ;
+  serverPath += "&hab1=";
+  serverPath += roomState[0];
+  serverPath += "&hab2=";
+  serverPath += roomState[1];
+  serverPath += "&hab3=";
+  serverPath += roomState[2];
+  String response = get_request(serverPath);   
 }
