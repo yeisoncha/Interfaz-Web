@@ -1,0 +1,61 @@
+<?php
+include("./conexion.php");
+
+$mysqli = new mysqli($host,$user,$pw,$db);
+
+$user = $_POST["user"];
+$password = $_POST["password"];
+
+$passwd_comp = md5($password);
+
+session_start();
+$_SESSION["user"] = $user;
+
+$consulta = "SELECT * FROM usuarios where login='$user' and passwd='$password' and activo='1'";
+$rs= $mysqli->query($consulta);
+$row1 = $rs->fetch_array(MYSQLI_NUM);
+$filas=$rs->num_rows;
+
+if ($filas > 0)
+  {
+    $passwdc = $row1[6];
+
+    if ($passwdc == $passwd_comp)
+      {
+        $_SESSION["autenticado"]= "SIx3";
+        $tipo_usuario = $row1[7];
+        $nombre_usuario = $row1[1];
+        $sql2 = "SELECT * from tipo_usuario where id='$tipo_usuario'";
+        $result2 = $mysqli->query($sql2);
+        $row2 = $result2->fetch_array(MYSQLI_NUM);
+        $desc_tipo_usu = $row2[1];
+        $_SESSION["tipo_usuario"]= $desc_tipo_usu;
+        $_SESSION["nombre_usuario"]= $nombre_usuario;  
+        $_SESSION["id_usuario"]= $row1[0];;  
+        
+        if ($tipo_usuario == 1)
+            header("Location: ./index.php");
+         else
+            header("Location: ./index.php");
+      }
+    else 
+     {
+      header('Location: index.php?mensaje=1');
+     }
+  }
+else
+  {
+    header('Location: index.php?mensaje=2');
+ }  
+
+    ?>    
+    <?php
+    include("Login.php");
+    ?>
+    
+    <h1 class="bad" style="color:white;"> Error en la autentificación</h1>
+    <?php
+
+
+mysqli_free_result($rs);
+mysqli_close($mysqli);
