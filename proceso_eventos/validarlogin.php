@@ -33,24 +33,24 @@ if ($filas > 0)
         $_SESSION["nombre_usuario"]= $nombre_usuario;  
         $_SESSION["id_usuario"]= $row1[0];;  
         
-        if ($tipo_usuario == 1)
-            header("Location: ./index.php");
-         else
-            header("Location: ./index.php");
+        if ($tipo_usuario == 1){
+            header("Location: ./crear_viviendas.php");
+        }else if($tipo_usuario == 2){
+            header("Location: ./index.php");}
       }
     else 
      {
-      header('Location: index.php?mensaje=1');
+      header('Location: Login.php?mensaje=1');
      }
   }
 else
   {
-    header('Location: index.php?mensaje=2');
+    header('Location: ./Login.php?mensaje=2');
  }  
 
     ?>    
     <?php
-    include("Login.php");
+    include("./Login.php");
     ?>
     
     <h1 class="bad" style="color:white;"> Error en la autentificación</h1>
