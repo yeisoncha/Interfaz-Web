@@ -133,11 +133,11 @@
                  
             <a>Modos de Iluminación</a>     
             <ul>
-            <form method="POST" action = "check_status.php">
+            
                         <button class="btn" type="submit" name = "MODOREMOTO" >Modo Remoto</button>
                         <button class="btn" type="submit" name = "MODOAUTOMATICO" >Modo Automatico</button>
                         <button class="btn" type="submit" name = "MODOSENSADO" >Modo Sensado</button>
-            </form>
+            
                     </ul>
             
             </li>    
