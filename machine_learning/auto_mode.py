@@ -110,7 +110,7 @@ print(precision_score(ytest, y_model, average='macro'))
 # In[22]:
 
 
-y_model=model.predict([[10,111,1]])
+y_model=model.predict([[arg1,arg2,arg3]])
 print("Accion predicha con los valores ingresados en el algoritmo:")
 print(y_model)
 
