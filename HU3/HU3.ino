@@ -16,7 +16,6 @@ const int   watchdog = 2000;        // Frecuencia del Watchdog
 unsigned long previousMillis = millis(); 
 unsigned long onOffDelay;
 unsigned long previousonOffDelay;
-unsigned long auto_millis=0;
 
 
 #define hab1 13 // Salida para el control de un relay, control iluminación habitacion 1
