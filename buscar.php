@@ -52,7 +52,7 @@
                             habitaciones=<?php echo $mostrar['2']?>
                             house_code=<?php echo $mostrar['3']?>
                             ">Editar</a>
-                            <a href="eliminar.php">Eliminar</a>
+                            <a href="sp_eliminar.php">Eliminar</a>
                         </td>
                     </tr>
                     <?php
