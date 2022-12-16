@@ -1,6 +1,6 @@
 <?php
 class conectar{
-    private $host = "localhost:3307";
+    private $host = "localhost";
    private $user = "root";
     private $pw = "";
     private $db = "newiot";
