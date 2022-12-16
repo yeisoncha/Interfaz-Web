@@ -28,6 +28,6 @@
     //echo ($arg2);
     //echo ("\n");
     //echo ($arg3);   
-exec("python auto_mode.py $arg1 $arg2 $arg3");
+    exec("python auto_mode.py $arg1 $arg2 $arg3");
 
 ?>

@@ -1,10 +1,10 @@
 <?php
-    include 'conexion.php';
+    include "Proyect/connection/conexion.php";
     
 
 ?>
 <?php 
-          $mysqli = new mysqli($host, $user, $pw, $db);
+          $mysqli = connect();
           $sql11 = "SELECT * from estados";
           $result = $mysqli->query($sql11);
           $row = $result->fetch_array(MYSQLI_NUM);

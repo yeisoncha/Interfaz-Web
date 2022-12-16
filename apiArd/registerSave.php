@@ -20,11 +20,11 @@
         $hora = date("h:i:s");
 
         for ($i = 0; $i <= 2; $i++) {
-            if($row[$i] != $new_status[$i]){
+            //if($row[$i] != $new_status[$i]){
                 $id_room = $i+1;
                 $sql1 = "INSERT INTO rooms_state (ID_TARJ, id_room, fecha, hora, on_off) VALUES ('$ID_TARJ', '$id_room', '$fecha','$hora','$new_status[$i]')";
                 $result = $mysqli->query($sql1);
-            }
+            //}
         }
         $sql2 = "UPDATE estados SET hab1 = $new_status[0] , hab2 = $new_status[1] , hab3 = $new_status[2] WHERE ID_TARJ='$ID_TARJ'";
         $result = $mysqli->query($sql2);

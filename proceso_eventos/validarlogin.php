@@ -1,5 +1,5 @@
 <?php
-include("./conexion.php");
+include("conexion.php");
 
 $mysqli = new mysqli($host,$user,$pw,$db);
 
@@ -11,7 +11,7 @@ $passwd_comp = md5($password);
 session_start();
 $_SESSION["user"] = $user;
 
-$consulta = "SELECT * FROM usuarios where login='$user' and passwd='$password' and activo='1'";
+$consulta = "SELECT * FROM usuarios where login='$user'and activo='1'";
 $rs= $mysqli->query($consulta);
 $row1 = $rs->fetch_array(MYSQLI_NUM);
 $filas=$rs->num_rows;
@@ -34,18 +34,18 @@ if ($filas > 0)
         $_SESSION["id_usuario"]= $row1[0];;  
         
         if ($tipo_usuario == 1)
-            header("Location: ./index.php");
+            header("Location: /Interfaz-Web/index.php");
          else
-            header("Location: ./index.php");
+            header("Location: /Interfaz-Web/index.php");
       }
     else 
      {
-      header('Location: index.php?mensaje=1');
+      header('Location: /Interfaz-Web/Login.php?mensaje=1');
      }
   }
 else
   {
-    header('Location: index.php?mensaje=2');
+    header('Location: /Interfaz-Web/Login.php?mensaje=2');
  }  
 
     ?>    
