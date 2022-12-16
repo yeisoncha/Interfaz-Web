@@ -15,6 +15,7 @@ void automatic_mode(){
   }
   else{
     if((millis() - auto_millis) > 30000){
+      auto_millis = millis();
       serverPath = "http://";
       serverPath += host;
       serverPath += "/Interfaz-Web/apiArd/auto_mode.php?room=";
@@ -24,14 +25,14 @@ void automatic_mode(){
       serverPath = "http://";
       serverPath += host;
       serverPath += "/Interfaz-Web/apiArd/auto_mode.php?room=";
-      serverPath += 2;
-      String response = get_request(serverPath);
+      serverPath += 10;
+      response = get_request(serverPath);
       
       serverPath = "http://";
       serverPath += host;
       serverPath += "/Interfaz-Web/apiArd/auto_mode.php?room=";
-      serverPath += 3;
-      String response = get_request(serverPath);
+      serverPath += 11;
+      response = get_request(serverPath);
     }
   }
 
