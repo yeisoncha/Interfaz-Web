@@ -11,7 +11,7 @@ $passwd_comp = md5($password);
 session_start();
 $_SESSION["user"] = $user;
 
-$consulta = "SELECT * FROM usuarios where login='$user' and passwd='$password' and activo='1'";
+$consulta = "SELECT * FROM usuarios where login='$user' and activo='1'";
 $rs= $mysqli->query($consulta);
 $row1 = $rs->fetch_array(MYSQLI_NUM);
 $filas=$rs->num_rows;
@@ -34,28 +34,23 @@ if ($filas > 0)
         $_SESSION["id_usuario"]= $row1[0];;  
         
         if ($tipo_usuario == 1){
-            header("Location: ./crear_viviendas.php");
+            header("Location: /Interfaz-Web/viviendas.php");
+            //echo("administrador");
         }else if($tipo_usuario == 2){
-            header("Location: ./index.php");}
+            header("Location: /Interfaz-Web/index.php");
+            //echo("habitante");
+        }
+            
       }
     else 
      {
-      header('Location: Login.php?mensaje=1');
+      header('Location: /Interfaz-Web/Login.php?mensaje=1');
+      //echo("password incorrecta");
      }
   }
 else
   {
-    header('Location: ./Login.php?mensaje=2');
+    header('Location: /Interfaz-Web/Login.php?mensaje=2');
+    //echo("no exite");
  }  
-
-    ?>    
-    <?php
-    include("./Login.php");
-    ?>
-    
-    <h1 class="bad" style="color:white;"> Error en la autentificación</h1>
-    <?php
-
-
-mysqli_free_result($rs);
-mysqli_close($mysqli);
+?>
