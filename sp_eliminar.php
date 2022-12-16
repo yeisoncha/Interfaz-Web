@@ -1,5 +1,6 @@
 <?php
- $ID = $_GET['id'];
+include "conexion.php";
+include "metodos.php";
 
  $cnx = mysqli_connect("localhost","root","","newiot");
  $sql = "DELETE  FROM viviendas where id like $ID";
@@ -10,4 +11,6 @@
  else{
     header("Location: inicio.php");
  }
+
+
 ?>
